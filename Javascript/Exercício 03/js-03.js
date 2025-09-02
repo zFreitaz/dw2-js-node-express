@@ -19,23 +19,29 @@ class Heroi {
     }       
 }
 
-const homemAranha = new Herói ("HomemAranha", 200, 50, 150);
+const homemAranha = new Heroi ("HomemAranha", 500, 100, 350);
 homemAranha.teia = 1;
 
 homemAranha.sentidoAranha = () => {
-    return "Ele detectou perigo!!!"
-}
+    return " Detectou um grande perigo!!!"
+};
 
-const superMan = new Herói ("SuperMan", 100000, 100, 100000);
+const superMan = new Heroi ("SuperMan", 100000, 300, 100000);
 superMan.podeVoar = 1;
 
 superMan.visaoCalor = () => {
     return "Está utilizando visão de calor!!!"
-}
+};
 
-const batman = new Herói ("Batman", 100, 10, 40);
+const batman = new Heroi ("Batman", 100, 10, 40);
 batman.esconder = 1;
 
 batman.investigar = () => {
-    return "Está investigando!!!"
-}
+    return "Está investigando um crime!!!"
+};
+
+document.write (`
+       O Herói Homem-Aranha: ${homemAranha.sentidoAranha()}<br>
+       O Herói Superman: ${superMan.visaoCalor()}<br>
+       O Herói Batman: ${batman.investigar()}<br>   
+    `);
