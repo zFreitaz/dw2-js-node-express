@@ -38,7 +38,7 @@ document.write(`<p>Daqui a 10 dias será: ${dataAtual.getDate()} </p>`);
 
 // FORMATAÇÃO DE MOEDAS
 // REAL
-document.write("<h3>Formatação de moedas: </h3>");
+document.write("<h3>Formatação de moedas: </h3>");    
 
 const salario = 1512;
 const salarioReal = salario.toLocaleString("pt-br", {
