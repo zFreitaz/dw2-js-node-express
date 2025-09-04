@@ -62,4 +62,4 @@ listaProdutos.forEach(produto => {
         Preço: ${produto.preco}<br>
         Descrição: ${produto.descricao}<br><br>
         `);
-});
+});   
