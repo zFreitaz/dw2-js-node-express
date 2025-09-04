@@ -30,7 +30,7 @@ listaClientes.push({
      cpf: 88899900
 });
 
-listaClientes.forEach(cliente => {
+listaClientes.forEach(cliente => {    
    document.write(`
         Nome: ${cliente.nome}<br>
         Endereço: ${cliente.endereco}<br>
