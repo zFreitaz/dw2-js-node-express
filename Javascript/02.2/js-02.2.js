@@ -33,7 +33,6 @@ document.write(`<p>A lista de frutas ordenada é: ${vetor.sort()}</p>`)
 document.write(`<p> ${numbers.sort((a, b) => a - b)}</p>`)
 
 // Ordenando um vetor númerico em ordem decrescente:
-document.write(`<p> ${numbers.sort((a, b) => b - a)}</p>`)
-
+document.write(`<p> ${numbers.sort((a, b) => b - a)}</p>`)    
 
 
