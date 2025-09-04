@@ -24,4 +24,4 @@ function prosseguir() {
     document.querySelector("#prosseguir").style.backgroundColor = "green";
     document.querySelector("#parar").style.backgroundColor = "gray";
     document.querySelector("#atencao").style.backgroundColor = "gray";
-}
+}   
