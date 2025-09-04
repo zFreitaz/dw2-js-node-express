@@ -33,4 +33,4 @@ function userMassage(user){
     // ${} -> Template String / Literal Strings
     // É usado para inserir variáveis dentro de STRINGS (CRASE)
 }
-userMassage(user); //ARGUMENTO
+userMassage(user); //ARGUMENTO  2  
