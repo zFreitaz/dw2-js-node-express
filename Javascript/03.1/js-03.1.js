@@ -33,7 +33,7 @@ carroEsportivo.modelo = "Camaro"
 carroEsportivo.ano = 2024
 
 document.write(
-    `<p>O carro ${carroEsportivo.marca} modelo ${carroEsportivo.modelo} é do ano de ${carroEsportivo.ano}. Quando buzina faz ${carroEsportivo.buzinar()}</p>`
+    `<p>O carro ${carroEsportivo.marca} modelo ${carroEsportivo.modelo} é do ano de ${carroEsportivo.ano}. Quando buzina faz ${carroEsportivo.buzinar()}</p>`     
 );
 
 // Adicionar um novo atributo
