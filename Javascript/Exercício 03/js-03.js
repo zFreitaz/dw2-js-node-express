@@ -44,4 +44,4 @@ document.write (`
        O Herói Homem-Aranha: ${homemAranha.sentidoAranha()}<br>
        O Herói Superman: ${superMan.visaoCalor()}<br>
        O Herói Batman: ${batman.investigar()}<br>   
-    `);
+    `);   
