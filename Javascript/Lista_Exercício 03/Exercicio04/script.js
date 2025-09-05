@@ -9,7 +9,7 @@ function escuro() {
     document.getElementById("container").style.backgroundColor = "black";
     document.getElementById("escuro").style.backgroundColor = "darkgray";
     document.getElementById("claro").style.backgroundColor = "white";
-    document.getElementById("pele").style.color = "white";
+    document.getElementById("pele").style.color = "white";   
 }
 
 
