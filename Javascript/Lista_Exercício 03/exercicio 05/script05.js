@@ -21,4 +21,4 @@ const dia = dataEntrega.getDate().toString().padStart(2, '0');
 const mes = (dataEntrega.getMonth() + 1).toString().padStart(2, '0');
 const ano = dataEntrega.getFullYear();
     
-document.write("Previsão de entrega: " + dia + '/' + mes + '/' + ano);
+document.write("Previsão de entrega: " + dia + '/' + mes + '/' + ano);  
