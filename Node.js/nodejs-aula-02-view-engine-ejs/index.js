@@ -22,7 +22,7 @@ app.get("/produtos", (req, res) => {
      { nome: "Celular", preco: 3000},
      { nome: "Computador", preco: 4000},
      { nome: "Tablet", preco: 2000},
-     { nome: "Notebook", preco: 3800},
+     { nome: "Notebook", preco: 3800},   
    ];
   
   res.render("produtos", {
