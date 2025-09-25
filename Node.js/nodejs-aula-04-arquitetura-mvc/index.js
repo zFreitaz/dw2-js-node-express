@@ -18,7 +18,7 @@ app.use(express.static("public"));
 // DEFININDO O USO DAS ROTAS QUE ESTÃO NOS CONTROLLERS
 app.use("/", ClientesController);
 app.use("/", PedidosController);
-app.use("/", ProdutosController);
+app.use("/", ProdutosController);   
 
 // Criando a primeira rota do site (ROTA PRINCIPAL)
 // REQ - Trata a REQUISIÇÃO / RES - Trata a RESPOSTA
