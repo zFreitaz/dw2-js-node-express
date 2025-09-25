@@ -41,7 +41,7 @@ app.get("/clientes", (req, res) => {
     { nome: "Renan", CPF: "123.456.789-00", endereco: "Rua Curitiba, 22" },
   ]
 
-  res.render("clientes", {
+  res.render("clientes",    {
     clientes : clientes
   });  
 });
