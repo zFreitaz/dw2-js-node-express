@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introdução ao Node.js e Express.js</title>
+</head>
+<body>
+    <h1>Bem-vindo a Produtos!</h1>
+    <h2>Lista de produtos:</h2>
+    <%#= produtos %>
+
+    <!--Percorrendo a lista de produtos com forEach -->
+    <ul>
+      <% produtos.forEach(produto => { %>
+       <li>Produto:  <%= produto.nome %> </li>
+       <li> <%= produto.preco.toLocaleString("pt-br",{style: "currency", currency: "BRL"}) %> </li>
+       <br>
+       <% }) %> 
+    </ul>
+    <ul>
+        <li><a href="/">Voltar</a></li>
+    </ul>
+</body>
+</html>
