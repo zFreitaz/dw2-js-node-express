@@ -37,7 +37,7 @@ app.get("/clientes", (req, res) => {
   const clientes = [
     { nome: "Ricardo", CPF: "123.456.789-00", endereco: "Rua das Flores, 34" },
     { nome: "Isaac", CPF: "123.456.789-00", endereco: "Rua Diamante, 100" },
-    { nome: "Juliana", CPF: "123.456.789-00", endereco: "Rua Ceará, 30" },
+    { nome: "Juliana", CPF: "123.456.789-00", endereco: "Rua Ceará, 30" },  
     { nome: "Renan", CPF: "123.456.789-00", endereco: "Rua Curitiba, 22" },
   ]
 
