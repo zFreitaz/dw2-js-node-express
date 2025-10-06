@@ -1,0 +1,32 @@
+<%- include ('partials/header.ejs') %>
+<%- include ('partials/navbar.ejs') %>
+    <h1>Bem-vindo a página de Jogos!</h1>
+   
+    <h3>Lista de Jogos:</H3>   
+    <hr>
+
+    <table class="table table-bordered table-hover">
+        <thead class="table-dark">
+          <tr> 
+            <th>Nome:</th>
+            <th>Console:</th>
+            <th>Valor:</th>
+          </tr> 
+        </thead>
+    <tbody>
+        <!-- FOREACH -->
+          <% jogos.forEach(jogo => { %>
+            <tr>
+             <td><%= jogo.nome %></td>
+             <td><%= jogo.console %></td>
+             <td><%= jogo.valor %></td>
+            </tr>
+        <% }) %>
+    </tbody>
+    </table>
+    <ul>
+        <li><a href="/">Voltar</a></li>
+    </ul>
+</body>
+</html>
+<%- include ('partials/footer.ejs') %>
