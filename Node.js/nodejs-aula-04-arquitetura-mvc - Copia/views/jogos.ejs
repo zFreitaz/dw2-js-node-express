@@ -1,32 +1,62 @@
 <%- include ('partials/header.ejs') %>
 <%- include ('partials/navbar.ejs') %>
-    <h1>Bem-vindo a página de Jogos!</h1>
-   
-    <h3>Lista de Jogos:</H3>   
+    <h1>Página de Jogos</h1>
     <hr>
 
-    <table class="table table-bordered table-hover">
-        <thead class="table-dark">
-          <tr> 
-            <th>Nome:</th>
-            <th>Console:</th>
-            <th>Valor:</th>
-          </tr> 
-        </thead>
-    <tbody>
-        <!-- FOREACH -->
-          <% jogos.forEach(jogo => { %>
-            <tr>
-             <td><%= jogo.nome %></td>
-             <td><%= jogo.console %></td>
-             <td><%= jogo.valor %></td>
-            </tr>
-        <% }) %>
-    </tbody>
-    </table>
-    <ul>
-        <li><a href="/">Voltar</a></li>
-    </ul>
-</body>
-</html>
+
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h1>Alterar Jogo</h1>
+            <hr>
+            <form method="POST" action="/jogos/update/<%= jogos.id %>">
+                <label>Nome do Jogo:</label>
+                <input type="text" name="nome" id="nome" value="<%= jogo.nome %>" class="form-control" required>
+                                
+                <label>CPF do cliente:</label>
+                <input type="text" name="cpf" id="cpf" value="<%= cliente.cpf %>" class="form-control cpf" required>
+                
+                <label>Endereço do cliente:</label>
+                <input type="text" name="endereco" id="endereco" value="<%= cliente.endereco %>" class="form-control" required>
+                <br>
+                <input type="hidden" name="id" value="<%= cliente.id %>">
+                <input type="submit" class="btn btn-warning" value="Alterar" onclick="return confirm('Confirma as alterações realizadas para o cliente <%= cliente.nome %>?')">
+            </form>
+            <hr>
+        </div>
+    </div>
+</div>
+<br>
+
+<%- include ('partials/footer.ejs') %>
+    <h2>Lista de Jogos: </h2>
+
+    <% if (jogos && jogos.length > 0) { %>
+        <table class="table table-bordered table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>Nome do Jogo</th>
+                    <th>Console</th>
+                    <th>Valor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <%# O loop itera sobre a lista de jogos enviada pelo Controller %>
+                <% jogos.forEach(jogo => { %>
+                    <tr>
+                        <td><%= jogo.nome %></td>
+                        <td><%= jogo.console %></td>
+                        <td><%= jogo.valor %></td>
+                    </tr>
+                <% }); %> 
+            </tbody>
+        </table>
+    <% } else { %>
+        <div class="alert alert-info" role="alert">
+            Nenhum jogo encontrado no catálogo.
+        </div>
+    <% } %>
+
+    <br>
+    <a href="/"><< Voltar a HomePage </a>
 <%- include ('partials/footer.ejs') %>
