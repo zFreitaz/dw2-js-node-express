@@ -1,0 +1,33 @@
+<%- include ('partials/header.ejs') %>
+<%- include ('partials/navbar.ejs') %>
+    <h1>Bem-vindo a Página de Quadrinhos!</h1>
+    <h2>Lista de HQs:</h2>
+    <%#= quadrinhos %>
+
+ 
+    <table class="table table-bordered table-hover">
+        <thead class="table-dark">
+          <tr> 
+            <th>Nome:</th>
+            <th>Preco:</th>
+            <th>Empresa:</th>
+          </tr> 
+        </thead>
+    <tbody>
+        <!-- FOREACH -->
+          <% quadrinhos.forEach(quadrinho => { %>
+            <tr>
+             <td><%= quadrinho.nome %></td>
+             <td><%= quadrinho.preco %></td>
+             <td><%= quadrinho.empresa %></td>
+            </tr>
+        <% }) %>
+    </tbody>
+    </table>
+    <ul>
+        <li><a href="/">Voltar</a></li>
+    </ul>
+</body>
+</html>
+<%- include ('partials/footer.ejs') %> 
+   

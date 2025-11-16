@@ -1,0 +1,142 @@
+<%- include ('partials/header.ejs') %>
+<%- include ('partials/navbar.ejs') %>
+    <h1 class="text-center">Página de Jogos</h1>
+    <hr>
+    
+    <div class="container">
+        <div class="card">
+            <div class="card-header text-center">
+                <h1><%= jogo.id ? 'Editar Jogo: ' + jogo.nome : 'Cadastrar um Novo Jogo' %></h1>
+            </div>
+            <div class="card-body">
+                <form method="POST" action="<%= jogo.id ? '/jogos/update/' + jogo.id : '/jogos/new' %>" enctype="multipart/form-data">
+                    
+                    <label>Nome do Jogo:</label>
+                    <input type="text" name="nome" id="nome" 
+                           placeholder="Insira o Nome do Jogo" 
+                           class="form-control" 
+                           value="<%= jogo.nome || '' %>" required>
+                    
+                    <label>Console:</label>
+                    <input type="text" name="console" id="console" 
+                           placeholder="Insira o Console (Ex: PS5, Xbox)" 
+                           class="form-control" 
+                           value="<%= jogo.console || '' %>" required>
+                    
+                    <label>Valor (R$):</label>
+                    <input type="text" name="valor" id="valor" 
+                           placeholder="Insira o Valor (Ex: R$ 250.00)" 
+                           class="form-control" 
+                           value="<%= jogo.valor || '' %>" required>
+
+                    <label>Imagem do Jogo:</label>
+                    <input type="file" name="imagem" id="imagem" 
+                           class="form-control" 
+                           accept="image/*">
+
+                    <% if (jogo.id && jogo.imagem) { %>
+                        <div class="mt-2 text-center">
+                            <p>Imagem atual:</p>
+                            <img src="/imgs/<%= jogo.imagem %>" 
+                                 alt="<%= jogo.nome %>" 
+                                 class="img-thumbnail" 
+                                 style="max-width: 200px;">
+                        </div>
+                    <% } %>
+
+                    <br>
+
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-success">
+                            <%= jogo.id ? 'Salvar Edição' : 'Cadastrar' %>
+                        </button>
+                        
+                        <button type="reset" class="btn btn-secondary ml-2">Limpar</button>
+
+                        <% if (jogo.id) { %>
+                            <a href="/jogos" class="btn btn-warning ml-2">Cancelar Edição</a>
+                        <% } %>
+                    </div>
+
+                </form>
+                <hr>
+            </div>
+        </div>
+    </div>
+        
+    <hr>
+
+    <h2 class="text-center">Lista de Jogos: </h2>
+
+    <table id="table" class="table table-bordered table-hover">
+        <thead class="table-dark">
+            <tr>
+                <th class="text-center" style="font-size: 14px;">Imagem</th>
+                <th class="text-center" style="font-size: 14px;">Nome</th>
+                <th class="text-center" style="font-size: 14px;">Console</th>
+                <th class="text-center" style="font-size: 14px;">Valor</th>
+                <th class="text-center" style="font-size: 14px; width: 90px;">Editar</th>
+                <th class="text-center" style="font-size: 14px; width: 90px;">Excluir</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% jogos.forEach(jogoItem => { %>
+                <tr class="align-middle">
+                    <td class="text-center">
+                        <img src="/imgs/<%= jogoItem.imagem %>" 
+                             alt="<%= jogoItem.nome %>" 
+                             class="img-thumbnail mx-auto d-block" 
+                             style="width: 100px; height: 100px; object-fit: cover;">
+                    </td>
+                    <td class="text-center align-middle" style="font-size: 14px;">
+                        <strong><%= jogoItem.nome %></strong>
+                    </td>
+                    <td class="text-center align-middle" style="font-size: 14px;">
+                        <%= jogoItem.console %>
+                    </td>
+                    <td class="text-center align-middle" style="font-size: 14px;">
+                        <%= jogoItem.valor %>
+                    </td>
+                    
+                    <td class="text-center align-middle">
+                        <a href="/jogos/edit/<%= jogoItem.id %>" class="btn btn-warning btn-sm" style="font-size: 12px; padding: 4px 8px;">
+                            Editar
+                        </a>
+                    </td>
+                    
+                    <td class="text-center align-middle">
+                        <form method="POST" action="/jogos/delete/<%= jogoItem.id %>" class="d-inline">
+                            <button type="submit" class="btn btn-danger btn-sm" style="font-size: 12px; padding: 4px 8px;" onclick="return confirm('Deseja mesmo excluir o jogo <%= jogoItem.nome %>?')">
+                                Excluir
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+
+    <br>
+    <div class="text-center">
+        <a href="/"><< Voltar a HomePage</a>
+    </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const limparBtn = document.querySelector('button[type="reset"]');
+    
+    if (limparBtn) {
+        limparBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+          
+            document.getElementById('nome').value = '';
+            document.getElementById('console').value = '';
+            document.getElementById('valor').value = '';
+            document.getElementById('imagem').value = '';
+        });
+    }
+});
+</script>
+
+<%- include ('partials/footer.ejs') %>

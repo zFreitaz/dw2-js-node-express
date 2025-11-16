@@ -1,0 +1,29 @@
+<%- include ('partials/header.ejs') %>
+<%- include ('partials/navbar.ejs') %>
+    <h1>Página de Animes</h1>
+    <hr>
+
+    <h2>Lista de Anime: </h2>
+
+    <table class="table table-bordered table-hover">
+        <thead class="table-dark">
+            <tr>
+                <th>Anime</th>
+                <th>Ranking</th>
+                <th>Avaliação</th>
+            </tr>
+        </thead>
+     <tbody>
+        <% animes.forEach(anime => { %>
+            <tr>
+                <td><%=anime.anime%></td>
+                <td><%=anime.rank%></td>
+                <td><%=anime.avaliação%></td>
+            </tr>
+        <% }); %> 
+    </tbody>
+    </table>
+
+    <br>
+    <a href="/"><< Voltar a HomePage </a>
+<%- include ('partials/footer.ejs') %>
